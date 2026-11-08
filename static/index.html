@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <meta name="description" content="Rewrite text for Nigerian, British, International and American English audiences.">
+  <title>Say It Naturally — Regional English Rewriter</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Say It Naturally home"><span class="brand-mark">S</span><span>say it <b>naturally</b></span></a>
+    <span class="top-note">Writing that sounds like you</span>
+  </header>
+  <main>
+    <section class="intro">
+      <div class="eyebrow"><span></span> REGIONAL ENGLISH, REWRITTEN</div>
+      <h1>Make your words<br><em>feel at home.</em></h1>
+      <p>Rewrite for the people you’re speaking to. Keep your meaning, choose your region, and find the right tone.</p>
+    </section>
+
+    <section class="workspace" aria-label="Text rewriting tool">
+      <div class="controls">
+        <label class="control-label" for="region">WRITE FOR</label>
+        <select id="region" aria-label="Choose regional English">
+          <option value="auto">✨ Auto-detect a region</option>
+          <option value="en-NG">🇳🇬 Nigerian English</option>
+          <option value="en-GB">🇬🇧 British English</option>
+          <option value="en-INT">🌍 International English</option>
+          <option value="en-US">🇺🇸 American English</option>
+          <option value="pcm-NG">🇳🇬 Nigerian Pidgin (separate mode)</option>
+        </select>
+        <label class="control-label tone-label" for="tone">TONE</label>
+        <select id="tone" aria-label="Choose writing tone">
+          <option value="keep">Keep my tone</option>
+          <option value="casual">Conversational</option>
+          <option value="professional">Professional</option>
+          <option value="academic">Academic</option>
+          <option value="concise">More concise</option>
+        </select>
+      </div>
+
+      <div class="editors">
+        <section class="editor-card">
+          <div class="editor-heading"><label for="source">YOUR TEXT</label><span id="sourceCount">0 / 5,000</span></div>
+          <textarea id="source" maxlength="5000" placeholder="Paste or write something here…" spellcheck="true"></textarea>
+          <div class="editor-footer"><button id="clearButton" class="text-button" type="button">Clear text</button><span>Meaning stays yours.</span></div>
+        </section>
+        <section class="editor-card output-card">
+          <div class="editor-heading"><span>YOUR REWRITE</span><span id="engineBadge" class="badge">READY</span></div>
+          <div id="output" class="output" aria-live="polite">Your rewritten text will appear here.</div>
+          <div class="editor-footer"><span id="resultRegion">Choose a region to begin.</span><button id="copyButton" class="text-button" type="button" disabled>Copy text</button></div>
+        </section>
+      </div>
+      <div class="action-row"><p id="notice" role="status">Select a language variety and tone, then rewrite.</p><button id="rewriteButton" class="rewrite-button" type="button"><span>Rewrite my text</span><span aria-hidden="true">↗</span></button></div>
+    </section>
+    <p class="privacy-note"><span aria-hidden="true">◇</span> Rewriting runs with rules bundled in this app; no model API key is required. Avoid sensitive information on public deployments.</p>
+    <section class="region-note"><div class="region-icon">◎</div><div><b>Local voice, not stereotypes.</b><p>Nigerian English and Nigerian Pidgin are separate choices. Auto-detection is only a suggestion; when it’s unsure, it uses International English.</p></div></section>
+  </main>
+  <footer><span>Say It Naturally</span><span>Clear words. Your voice.</span></footer>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
