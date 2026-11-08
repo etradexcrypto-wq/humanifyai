@@ -17,7 +17,7 @@
     <section class="intro">
       <div class="eyebrow"><span></span> REGIONAL ENGLISH, REWRITTEN</div>
       <h1>Make your words<br><em>feel at home.</em></h1>
-      <p>Rewrite for the people you’re speaking to. Keep your meaning, choose your region, and find the right tone.</p>
+      <p>Rewrite for the people you’re speaking to. Keep your meaning, choose your region, and compare three wording options.</p>
     </section>
 
     <section class="workspace" aria-label="Text rewriting tool">
@@ -49,14 +49,37 @@
         </section>
         <section class="editor-card output-card">
           <div class="editor-heading"><span>YOUR REWRITE</span><span id="engineBadge" class="badge">READY</span></div>
-          <div id="output" class="output" aria-live="polite">Your rewritten text will appear here.</div>
-          <div class="editor-footer"><span id="resultRegion">Choose a region to begin.</span><button id="copyButton" class="text-button" type="button" disabled>Copy text</button></div>
+          <div id="optionTabs" class="option-tabs" role="tablist" aria-label="Choose a rewrite option" hidden>
+            <button class="option-tab active" type="button" role="tab" aria-selected="true" data-index="0">Option 1</button>
+            <button class="option-tab" type="button" role="tab" aria-selected="false" data-index="1">Option 2</button>
+            <button class="option-tab" type="button" role="tab" aria-selected="false" data-index="2">Option 3</button>
+          </div>
+          <div id="output" class="output muted" aria-live="polite">Your three dictionary-assisted alternatives will appear here.</div>
+          <div class="editor-footer"><span id="resultRegion">Choose a region to begin.</span><button id="copyButton" class="text-button" type="button" disabled>Copy selected</button></div>
         </section>
       </div>
-      <div class="action-row"><p id="notice" role="status">Select a language variety and tone, then rewrite.</p><button id="rewriteButton" class="rewrite-button" type="button"><span>Rewrite my text</span><span aria-hidden="true">↗</span></button></div>
+
+      <section class="detector-card" aria-labelledby="detectorTitle">
+        <div class="detector-head">
+          <div>
+            <span class="detector-kicker">BUILT-IN WRITING-STYLE CHECK</span>
+            <h2 id="detectorTitle">AI text detector</h2>
+            <p>Checks for writing patterns sometimes associated with AI-generated text.</p>
+          </div>
+          <div class="detector-reading"><strong id="detectorScore">—</strong><span id="detectorBand" class="detector-band">Waiting for text</span></div>
+        </div>
+        <div id="detectorScale" class="detector-scale" role="progressbar" aria-label="Estimated AI-style pattern score" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="Waiting for text">
+          <div class="scale-gradient"></div>
+          <div id="detectorMarker" class="scale-marker" hidden></div>
+        </div>
+        <div class="scale-labels"><span>Low indicator</span><span>Mixed</span><span>High indicator</span></div>
+        <p id="detectorDetail" class="detector-detail">Enter at least 25 words for a rough estimate. This checker does not prove who wrote the text.</p>
+      </section>
+
+      <div class="action-row"><p id="notice" role="status">Select a language variety and tone, then rewrite.</p><button id="rewriteButton" class="rewrite-button" type="button"><span>Show 3 rewrite options</span><span aria-hidden="true">↗</span></button></div>
     </section>
-    <p class="privacy-note"><span aria-hidden="true">◇</span> Rewriting runs with rules bundled in this app; no model API key is required. Avoid sensitive information on public deployments.</p>
-    <section class="region-note"><div class="region-icon">◎</div><div><b>Local voice, not stereotypes.</b><p>Nigerian English and Nigerian Pidgin are separate choices. Auto-detection is only a suggestion; when it’s unsure, it uses International English.</p></div></section>
+    <p class="privacy-note"><span aria-hidden="true">◇</span> Rewriting and the style estimate use bundled rules; no model API key is required. Don’t submit sensitive information on public deployments.</p>
+    <section class="region-note"><div class="region-icon">◎</div><div><b>Dictionary-assisted, not magic.</b><p>Three alternatives are built from a bundled English synonym and phrase dictionary. Review each option—the same word can have different meanings in different contexts.</p></div></section>
   </main>
   <footer><span>Say It Naturally</span><span>Clear words. Your voice.</span></footer>
   <script src="/static/app.js" defer></script>
